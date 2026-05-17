@@ -361,6 +361,51 @@
   }
 }
 
+@media (max-width: 768px) {
+  .dashboard-title {
+    font-size: 36px;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .modal-box {
+    padding: 24px 20px;
+    border-radius: 20px;
+    margin: 0 12px;
+  }
+
+  .this-week-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-title {
+    font-size: 28px;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .stat-value {
+    font-size: 26px;
+  }
+
+  .panel {
+    padding: 20px;
+  }
+
+  .search-dropdown {
+    width: 100%;
+    left: -20px;
+  }
+}
+
 /* ── Quote widget extras ── */
 .quote-widget-actions {
   position: absolute;

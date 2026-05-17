@@ -270,3 +270,64 @@
   from { box-shadow: 0 0 16px rgba(239,68,68,0.4); transform: scale(1); }
   to   { box-shadow: 0 0 36px rgba(239,68,68,0.8); transform: scale(1.04); }
 }
+
+@media (max-width: 768px) {
+  .pomodoro-title {
+    font-size: 36px;
+  }
+
+  .main-timer-card {
+    padding: 36px 24px;
+  }
+
+  .timer-circle {
+    width: 240px;
+    height: 240px;
+  }
+
+  .time-display {
+    font-size: 56px;
+  }
+
+  .pomodoro-tabs {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .session-type-row {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .pomodoro-title {
+    font-size: 28px;
+  }
+
+  .main-timer-card {
+    padding: 28px 16px;
+  }
+
+  .timer-circle {
+    width: 200px;
+    height: 200px;
+  }
+
+  .time-display {
+    font-size: 44px;
+  }
+
+  .btn-start-large {
+    padding: 0 28px;
+    height: 48px;
+    font-size: 15px;
+  }
+
+  .pomodoro-footer {
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    gap: 6px;
+  }
+}

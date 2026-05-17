@@ -55,3 +55,18 @@
     padding: 60px 24px;
   }
 }
+
+@media (max-width: 480px) {
+  .cta-title {
+    font-size: 30px;
+  }
+
+  .cta-subtitle {
+    font-size: 15px;
+  }
+
+  .cta-card {
+    padding: 48px 16px;
+    border-radius: 20px;
+  }
+}

@@ -332,3 +332,37 @@
 }
 .btn-confirm:hover:not(:disabled) { transform: translateY(-1px); box-shadow: 0 6px 18px rgba(139,92,246,0.5); }
 .btn-confirm:disabled { opacity: 0.4; cursor: not-allowed; }
+
+@media (max-width: 768px) {
+  .goals-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
+  .goals-title {
+    font-size: 36px;
+  }
+
+  .btn-new-goal {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .modal-box {
+    padding: 24px 20px;
+    margin: 0 12px;
+    border-radius: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .goals-title {
+    font-size: 28px;
+  }
+
+  .goal-card {
+    padding: 20px;
+  }
+}

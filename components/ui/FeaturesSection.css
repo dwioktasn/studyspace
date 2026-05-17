@@ -81,4 +81,18 @@
   .features-title {
     font-size: 32px;
   }
+
+  .feature-card {
+    padding: 28px 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .features-title {
+    font-size: 26px;
+  }
+
+  .features-grid {
+    gap: 16px;
+  }
 }

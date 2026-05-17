@@ -321,4 +321,15 @@
   .achiev-grid { grid-template-columns: repeat(2, 1fr); }
   .profile-card { flex-direction: column; text-align: center; }
   .profile-tags { justify-content: center; }
+  .profile-name { font-size: 28px; }
+}
+
+@media (max-width: 480px) {
+  .profile-stats-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .profile-card { padding: 24px; gap: 20px; }
+  .profile-panel { padding: 20px; }
+  .achiev-grid { grid-template-columns: repeat(2, 1fr); }
+  .profile-name { font-size: 24px; }
+  .panel-top { flex-direction: column; gap: 12px; }
+  .prod-grid { grid-template-columns: 1fr; }
 }
