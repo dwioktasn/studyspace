@@ -1,0 +1,95 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  username  String   @unique
+  password  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  habits        Habit[]
+  goals         Goal[]
+  journals      Journal[]
+  focusSessions FocusSession[]
+  quotes        Quote[]
+  schedules     Schedule[]
+}
+
+model Habit {
+  id              String    @id @default(cuid())
+  name            String
+  icon            String?
+  color           String?
+  streak          Int       @default(0)
+  completed       Boolean   @default(false)
+  lastCompletedAt DateTime?
+  createdAt       DateTime  @default(now())
+
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Goal {
+  id          String   @id @default(cuid())
+  title       String
+  progress    Int      @default(0)
+  isCompleted Boolean  @default(false)
+  createdAt   DateTime @default(now())
+
+  userId      String
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Journal {
+  id        String   @id @default(cuid())
+  title     String
+  content   String
+  mood      String?
+  createdAt DateTime @default(now())
+
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model FocusSession {
+  id        String   @id @default(cuid())
+  duration  Int
+  type      String
+  createdAt DateTime @default(now())
+
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Quote {
+  id        String   @id @default(cuid())
+  text      String   @db.Text
+  author    String
+  createdAt DateTime @default(now())
+
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Schedule {
+  id             String   @id @default(cuid())
+  day            String   // SENIN, SELASA, RABU, KAMIS, JUMAT, SABTU
+  startTime      String   // "09:30"
+  endTime        String   // "11:00"
+  room           String
+  courseCode     String
+  courseName     String
+  lecturerCode   String?
+  classCode      String?
+  createdAt      DateTime @default(now())
+
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}

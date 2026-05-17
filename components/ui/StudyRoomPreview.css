@@ -1,0 +1,197 @@
+.preview-section {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.preview-layout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 80px;
+}
+
+.preview-content {
+  flex: 1;
+  max-width: 460px;
+}
+
+.preview-subtitle {
+  color: var(--accent-purple);
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.preview-title {
+  font-size: 48px;
+  color: white;
+  line-height: 1.1;
+  margin-bottom: 24px;
+}
+
+.preview-description {
+  color: var(--text-secondary);
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+.preview-btn {
+  padding: 14px 32px;
+}
+
+.preview-visual {
+  flex: 1.2;
+}
+
+.room-card {
+  padding: 32px;
+  background: rgba(15, 23, 42, 0.7);
+  border-radius: 32px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle background gradient inside card */
+.room-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(circle at center, rgba(139, 92, 246, 0.1) 0%, transparent 70%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.room-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  position: relative;
+  z-index: 1;
+}
+
+.room-name {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: white;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.live-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--accent-blue);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--accent-blue);
+}
+
+.room-online {
+  color: var(--text-muted);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.pomodoro-timer {
+  width: 280px;
+  height: 280px;
+  margin: 0 auto 40px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(15, 23, 42, 0.8);
+  box-shadow: 0 0 60px rgba(139, 92, 246, 0.15);
+  z-index: 1;
+}
+
+.timer-ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.timer-ring-bg {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.05);
+  stroke-width: 4;
+}
+
+.timer-ring-progress {
+  fill: none;
+  stroke: url(#timerGradient);
+  stroke-width: 6;
+  stroke-linecap: round;
+  stroke-dasharray: 283;
+  stroke-dashoffset: 60; /* Approx 80% progress */
+}
+
+/* We will inject an SVG gradient in the component if needed, or use CSS border tricks.
+   For simplicity, let's use a conic gradient background instead of complex SVG stroke for now, or just solid color. */
+.timer-ring-progress {
+  stroke: var(--accent-purple);
+  filter: drop-shadow(0 0 8px var(--accent-purple));
+}
+
+.timer-content {
+  text-align: center;
+}
+
+.timer-time {
+  font-size: 56px;
+  font-weight: 700;
+  color: white;
+  line-height: 1;
+  margin-bottom: 8px;
+  letter-spacing: -1px;
+}
+
+.timer-label {
+  color: var(--text-secondary);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.room-footer {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.users-list {
+  display: flex;
+  gap: 20px;
+}
+
+.user-name {
+  color: var(--text-secondary);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.user-more {
+  color: var(--accent-blue);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+@media (max-width: 900px) {
+  .preview-layout {
+    flex-direction: column;
+    text-align: center;
+    gap: 60px;
+  }
+  
+  .preview-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
