@@ -26,7 +26,7 @@ export async function GET(req: NextRequest) {
         select: { id: true, name: true, completed: true, streak: true },
       }),
       prisma.goal.findMany({
-        where: { userId, OR: [{ title: { contains: q } }, { description: { contains: q } }] },
+        where: { userId, title: { contains: q } },
         take: 4,
         select: { id: true, title: true, progress: true, isCompleted: true },
       }),
